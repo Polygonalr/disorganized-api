@@ -6,7 +6,7 @@ use axum::{
     Router,
 };
 use controllers::my_controller::hello;
-use models::test_model::test;
+use models::ViewToken;
 
 #[tokio::main]
 async fn main() {
@@ -17,8 +17,4 @@ async fn main() {
         .serve(app.into_make_service())
         .await
         .unwrap();
-}
-
-async fn root() -> &'static str {
-    "Hello world!"
 }
